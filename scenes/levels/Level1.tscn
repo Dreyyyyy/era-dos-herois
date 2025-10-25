@@ -1,9 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://dpbi0ophdhwuj"]
+[gd_scene load_steps=5 format=3 uid="uid://dpbi0ophdhwuj"]
 
 [ext_resource type="PackedScene" uid="uid://bm216j6wy7hu5" path="res://scenes/player/Player.tscn" id="1_1pwbc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gckpv"]
 size = Vector2(1152, 136)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1pwbc"]
+size = Vector2(253, 61)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j08sa"]
+size = Vector2(64, 648)
 
 [node name="Level1" type="Node2D"]
 
@@ -25,3 +31,28 @@ color = Color(0, 0, 0, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_1pwbc")]
 position = Vector2(88, 480)
+
+[node name="Platform" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
+position = Vector2(704, 352)
+shape = SubResource("RectangleShape2D_1pwbc")
+one_way_collision = true
+
+[node name="ColorRect" type="ColorRect" parent="Platform"]
+offset_left = 576.0
+offset_top = 320.0
+offset_right = 832.0
+offset_bottom = 384.0
+
+[node name="BorderLeft" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BorderLeft"]
+position = Vector2(-32, 324)
+shape = SubResource("RectangleShape2D_j08sa")
+
+[node name="BorderRight" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BorderRight"]
+position = Vector2(1184, 324)
+shape = SubResource("RectangleShape2D_j08sa")
