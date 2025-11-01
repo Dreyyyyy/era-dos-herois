@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://dpbi0ophdhwuj"]
+[gd_scene load_steps=7 format=3 uid="uid://dpbi0ophdhwuj"]
 
 [ext_resource type="PackedScene" uid="uid://bm216j6wy7hu5" path="res://scenes/player/Player.tscn" id="1_1pwbc"]
+[ext_resource type="PackedScene" uid="uid://cs3xlnrhlcwxe" path="res://scenes/ui/MinimapUI.tscn" id="1_x4si1"]
+[ext_resource type="PackedScene" uid="uid://cyry4pkm2gvxj" path="res://scenes/ui/PlayerUI.tscn" id="2_j08sa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gckpv"]
-size = Vector2(1152, 136)
+size = Vector2(2360, 136)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1pwbc"]
 size = Vector2(253, 61)
@@ -16,16 +18,18 @@ size = Vector2(64, 648)
 [node name="Floor" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
-position = Vector2(576, 580)
+position = Vector2(1180, 580)
 shape = SubResource("RectangleShape2D_gckpv")
 
-[node name="ColorRect" type="ColorRect" parent="Floor"]
-offset_top = 512.0
-offset_right = 1152.0
-offset_bottom = 648.0
+[node name="ColorRect" type="ColorRect" parent="Floor/CollisionShape2D"]
+offset_left = -1244.0
+offset_top = -68.0
+offset_right = 1180.0
+offset_bottom = 68.0
 
 [node name="Background" type="ColorRect" parent="."]
-offset_right = 1152.0
+offset_left = -64.0
+offset_right = 2360.0
 offset_bottom = 512.0
 color = Color(0, 0, 0, 1)
 
@@ -45,6 +49,19 @@ offset_top = 320.0
 offset_right = 832.0
 offset_bottom = 384.0
 
+[node name="Platform2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2"]
+position = Vector2(1536, 352)
+shape = SubResource("RectangleShape2D_1pwbc")
+one_way_collision = true
+
+[node name="ColorRect" type="ColorRect" parent="Platform2"]
+offset_left = 1408.0
+offset_top = 320.0
+offset_right = 1664.0
+offset_bottom = 384.0
+
 [node name="BorderLeft" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BorderLeft"]
@@ -54,5 +71,12 @@ shape = SubResource("RectangleShape2D_j08sa")
 [node name="BorderRight" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BorderRight"]
-position = Vector2(1184, 324)
+position = Vector2(2328, 324)
 shape = SubResource("RectangleShape2D_j08sa")
+
+[node name="UICanvas" type="CanvasLayer" parent="."]
+
+[node name="MinimapUI" parent="UICanvas" instance=ExtResource("1_x4si1")]
+metadata/_edit_lock_ = true
+
+[node name="PlayerUI" parent="UICanvas" instance=ExtResource("2_j08sa")]

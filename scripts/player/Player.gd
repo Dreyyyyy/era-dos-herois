@@ -3,11 +3,12 @@ extends CharacterBody2D
 @export var speed: float = 200.0
 @export var gravity: float = 1500.0
 @export var jump_force: float = -750.0
-@export var run_multiplier: float = 2.0
+@export var run_multiplier: float = 2.5
 @export var drop_through_duration: float = 0.2
 
 var dropping := false
 
+# https://docs.godotengine.org/en/stable/tutorials/2d/2d_movement.html
 func get_input() -> Vector2:
 	var input_direction: Vector2 = Input.get_vector("player_left", "player_right", "player_up", "player_down")
 	return input_direction
