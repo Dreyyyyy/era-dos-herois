@@ -1,0 +1,164 @@
+[gd_scene format=3 uid="uid://cyry4pkm2gvxj"]
+
+[node name="PlayerUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayerInfo" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 320.0
+offset_bottom = 180.0
+
+[node name="PlayerPortrait" type="TextureRect" parent="PlayerInfo"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+offset_right = 64.0
+offset_bottom = 64.0
+size_flags_vertical = 0
+stretch_mode = 5
+
+[node name="PlayerAvatar" type="ColorRect" parent="PlayerInfo/PlayerPortrait"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayerStats" type="VBoxContainer" parent="PlayerInfo"]
+custom_minimum_size = Vector2(200, 20)
+layout_mode = 2
+offset_left = 68.0
+offset_right = 268.0
+offset_bottom = 160.0
+
+[node name="HealthBar" type="TextureProgressBar" parent="PlayerInfo/PlayerStats"]
+custom_minimum_size = Vector2(200, 20)
+layout_mode = 2
+
+[node name="HealthPlaceholder" type="ColorRect" parent="PlayerInfo/PlayerStats/HealthBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.939678, 0.0311941, 2.11775e-06, 1)
+
+[node name="EnergyBar" type="TextureProgressBar" parent="PlayerInfo/PlayerStats"]
+custom_minimum_size = Vector2(200, 20)
+layout_mode = 2
+
+[node name="EnergyPlaceholder" type="ColorRect" parent="PlayerInfo/PlayerStats/EnergyBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.121569, 0.901961, 0.866667, 1)
+
+[node name="Skills" type="GridContainer" parent="PlayerInfo/PlayerStats"]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 3
+
+[node name="Skill1" type="TextureRect" parent="PlayerInfo/PlayerStats/Skills"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="PlayerInfo/PlayerStats/Skills/Skill1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.192157, 1, 1)
+
+[node name="Skill2" type="TextureRect" parent="PlayerInfo/PlayerStats/Skills"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="PlayerInfo/PlayerStats/Skills/Skill2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(6.257e-07, 0.827892, 0.345076, 1)
+
+[node name="Skill3" type="TextureRect" parent="PlayerInfo/PlayerStats/Skills"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="PlayerInfo/PlayerStats/Skills/Skill3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.323962, 0.323962, 0.323962, 1)
+
+[node name="PlayerStars" type="GridContainer" parent="PlayerInfo/PlayerStats"]
+custom_minimum_size = Vector2(200, 20)
+layout_mode = 2
+columns = 3
+
+[node name="Star1" type="TextureRect" parent="PlayerInfo/PlayerStats/PlayerStars"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect" type="ColorRect" parent="PlayerInfo/PlayerStats/PlayerStars/Star1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 0.0980392, 1)
+
+[node name="Star2" type="TextureRect" parent="PlayerInfo/PlayerStats/PlayerStars"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect" type="ColorRect" parent="PlayerInfo/PlayerStats/PlayerStars/Star2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 0.141176, 1)
+
+[node name="Star3" type="TextureRect" parent="PlayerInfo/PlayerStats/PlayerStars"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect" type="ColorRect" parent="PlayerInfo/PlayerStats/PlayerStars/Star3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 0.0980392, 1)
+
+[node name="ScoreLabel" type="Label" parent="PlayerInfo/PlayerStats"]
+layout_mode = 2
+text = "Score: 00000"
