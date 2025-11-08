@@ -7,6 +7,7 @@ var player: Node2D
 
 # Need to adjust the documentation with the proper references
 # https://docs.godotengine.org/en/stable/classes/class_subviewportcontainer.html
+# https://docs.godotengine.org/en/stable/classes/class_subviewport.html
 # https://www.youtube.com/watch?v=bcAEgXJYZtU
 func _ready() -> void:
 	minimap_viewport.world_2d = get_tree().root.world_2d
