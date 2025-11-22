@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dpbi0ophdhwuj"]
+[gd_scene load_steps=8 format=3 uid="uid://dpbi0ophdhwuj"]
 
 [ext_resource type="PackedScene" uid="uid://bm216j6wy7hu5" path="res://scenes/player/Player.tscn" id="1_1pwbc"]
 [ext_resource type="PackedScene" uid="uid://cs3xlnrhlcwxe" path="res://scenes/ui/MinimapUI.tscn" id="1_x4si1"]
+[ext_resource type="PackedScene" uid="uid://ol06twnxw7a" path="res://scenes/enemies/Goblin.tscn" id="2_fh0io"]
 [ext_resource type="PackedScene" uid="uid://cyry4pkm2gvxj" path="res://scenes/ui/PlayerUI.tscn" id="2_j08sa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gckpv"]
@@ -36,6 +37,9 @@ color = Color(0, 0, 0, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_1pwbc")]
 position = Vector2(88, 480)
+
+[node name="Goblin" parent="." instance=ExtResource("2_fh0io")]
+position = Vector2(488, 472)
 
 [node name="Platform" type="StaticBody2D" parent="."]
 
